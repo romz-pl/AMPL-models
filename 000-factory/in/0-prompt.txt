@@ -1,0 +1,32 @@
+Provide a mathematical model for the following problem.
+-----
+An engineering factory can produce five types of product (PROD 1, PROD 2, . . . ,
+PROD 5) by using two production processes: grinding and drilling.
+
+After deducting raw material costs, each unit of each product yields the
+following contributions to proﬁt:
+PROD1 £550
+PROD2 £600
+PROD3 £350
+PROD4 £400
+PROD5 £200
+
+Each unit requires a certain time on each process. These are given below (in
+hours). A dash indicates when a process is not needed.
+
+PROD1 PROD2 PROD3 PROD4 PROD5
+Grinding 12 20 - 25 15
+Drilling 10  8 16  - -
+
+In addition, the ﬁnal assembly of each unit of each product uses 20 hours of
+an employee’s time.
+
+The factory has three grinding machines and two drilling machines and works
+a six-day week with two shifts of 8 hours on each day. Eight workers are
+employed in assembly, each working one shift a day.
+
+The problem is to ﬁnd how much of each product is to be manufactured so
+as to maximize the total proﬁt contribution.
+
+-----
+

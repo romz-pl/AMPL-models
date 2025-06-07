@@ -1,0 +1,36 @@
+data;
+
+set PRODUCTS := PROD1 PROD2 PROD3 PROD4 PROD5;
+
+param profit :=
+PROD1 550
+PROD2 600
+PROD3 350
+PROD4 400
+PROD5 200;
+
+param grinding_time :=
+PROD1 12
+PROD2 20
+PROD3 0
+PROD4 25
+PROD5 15;
+
+param drilling_time :=
+PROD1 10
+PROD2 8
+PROD3 16
+PROD4 0
+PROD5 0;
+
+param assembly_time :=
+PROD1 20
+PROD2 20
+PROD3 20
+PROD4 20
+PROD5 20;
+
+param grinding_capacity := 288;
+param drilling_capacity := 192;
+param assembly_capacity := 384;
+

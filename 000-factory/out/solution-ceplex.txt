@@ -1,0 +1,46 @@
+*************************************************************
+
+   NEOS Server Version 6.0
+   Job#     : 16176935
+   Password : odaQLAug
+   User     : 
+   Solver   : lp:CPLEX:AMPL
+   Start    : 2025-06-07 09:47:29
+   End      : 2025-06-07 09:47:31
+   Host     : prod-sub-1.neos-server.org
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information for any particular purpose.
+
+   Announcements:
+*************************************************************
+You are using the solver cplexamp.
+Checking ampl.mod for cplex_options...
+Checking ampl.com for cplex_options...
+Executing AMPL.
+processing data.
+processing commands.
+Executing on prod-exec-1.neos-server.org
+
+5 variables, all linear
+3 constraints, all linear; 12 nonzeros
+	3 inequality constraints
+1 linear objective; 5 nonzeros.
+
+CPLEX 22.1.2:   tech:threads = 4
+CPLEX 22.1.2: optimal solution; objective 10920
+2 simplex iterations
+x [*] :=
+PROD1  12
+PROD2   7.2
+PROD3   0
+PROD4   0
+PROD5   0
+;
+
+Total_Profit = 10920
+

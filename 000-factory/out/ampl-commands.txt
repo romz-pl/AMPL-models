@@ -1,0 +1,4 @@
+solve;
+display x;
+display Total_Profit;
+
