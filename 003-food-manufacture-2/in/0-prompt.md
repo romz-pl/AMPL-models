@@ -52,8 +52,7 @@ It is wished to impose the following extra conditions on the food manufacture
 problem:
 1. The food may never be made up of more than three oils in any month.
 2. If an oil is used in a month, at least 20 tons must be used.
-3. If either of VEG 1 or VEG 2 are used in a month then OIL 3 must also
-be used.
+3. If either of VEG1 or VEG2 are used in a month then OIL3 must also be used.
 
 
 

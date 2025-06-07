@@ -1,75 +1,81 @@
-set T ordered;           # Months
-set O;           # All oils
-set V within O;  # Vegetable oils
-set N within O;  # Non-vegetable oils
+# =============================
+# AMPL Model: blending.mod
+# =============================
 
-param p {O, T};          # Purchase price (£/ton)
-param h {O};             # Hardness
-param c;                 # Final product selling price
-param Rv;                # Max refining capacity for vegetable oils
-param Rn;                # Max refining capacity for non-vegetable oils
-param Smax;              # Max storage per oil
-param Sinit;             # Initial and final storage per oil
-param Hmin;              # Min hardness
-param Hmax;              # Max hardness
-param s_cost;            # Storage cost per ton per month
-param BigM;              # Big-M for indicator constraints
+set T ordered;              # Months
+set V;                      # Vegetable oils
+set N;                      # Non-vegetable oils
+set O := V union N;         # All oils
 
-var x {O, T} >= 0;        # Purchased tons of oil o in month t
-var y {O, T} >= 0;        # Refined tons of oil o in month t
-var s {O, T} >= 0, <= Smax; # Storage tons of oil o at end of month t
-var z {O, T} binary;      # Indicator: 1 if oil o is used in month t
+param p {O, T} >= 0;        # Purchase price (£/ton)
+param h {O} >= 0;           # Hardness
+param s_cost >= 0;          # Storage cost per ton
+param init_stock {O} >= 0;  # Initial stock
+param final_stock {O} >= 0; # Required stock at end
+param M >= 0;               # Large number for linking binary
+param sell_price >= 0;      # Final product sale price
 
-# Total production per month
-var q {T} >= 0;
+param refine_limit_v >= 0;  # Max veg oil refine per month
+param refine_limit_n >= 0;  # Max non-veg oil refine per month
+
+# Decision variables
+var buy {O, T} >= 0;         # Purchase amount
+var use {O, T} >= 0;         # Refined/used in production
+var stock {O, T} >= 0;       # Inventory level
+var y {O, T} binary;         # 1 if oil is used
 
 # Objective: Maximize profit
 maximize Profit:
     sum {t in T} (
-        c * q[t]
-      - sum {o in O} (p[o,t] * x[o,t])
-      - s_cost * sum {o in O} s[o,t]
+        sell_price * sum {o in O} use[o,t]
+      - sum {o in O} (p[o,t] * buy[o,t] + s_cost * stock[o,t])
     );
 
-# Mass balance constraints
-s.t. Balance {o in O, t in T}:
-    s[o,t] = (if ord(t) = 1 then Sinit else s[o,prev(t)]) + x[o,t] - y[o,t];
+# Inventory balance
+subject to Inventory_Balance {o in O, t in T: ord(t) = 1}:
+    stock[o,t] = init_stock[o] + buy[o,t] - use[o,t];
 
-# Refining capacity
-s.t. VegLimit {t in T}:
-    sum {o in V} y[o,t] <= Rv;
+subject to Inventory_Balance2 {o in O, t in T: ord(t) > 1}:
+    stock[o,t] = stock[o,prev(t)] + buy[o,t] - use[o,t];
 
-s.t. NonVegLimit {t in T}:
-    sum {o in N} y[o,t] <= Rn;
+# Refining capacity constraints
+subject to Veg_Refine_Limit {t in T}:
+    sum {o in V} use[o,t] <= refine_limit_v;
 
-# Define total product per month
-s.t. ProductionTotal {t in T}:
-    q[t] = sum {o in O} y[o,t];
+subject to NonVeg_Refine_Limit {t in T}:
+    sum {o in N} use[o,t] <= refine_limit_n;
 
-# Hardness constraint
-s.t. HardnessLower {t in T}:
-    sum {o in O} h[o] * y[o,t] >= Hmin * q[t];
+# Hardness constraints
+subject to Hardness_Min {t in T}:
+    sum {o in O} h[o] * use[o,t] >= 3 * sum {o in O} use[o,t];
 
-s.t. HardnessUpper {t in T}:
-    sum {o in O} h[o] * y[o,t] <= Hmax * q[t];
+subject to Hardness_Max {t in T}:
+    sum {o in O} h[o] * use[o,t] <= 6 * sum {o in O} use[o,t];
 
-# Usage constraints
-s.t. MinUse {o in O, t in T}:
-    y[o,t] >= 20 * z[o,t];
+# Storage capacity
+subject to Storage_Limit {o in O, t in T}:
+    stock[o,t] <= 1000;
 
-s.t. MaxUse {o in O, t in T}:
-    y[o,t] <= BigM * z[o,t];
+# Binary linking: use > 0 if y = 1
+subject to Use_If_Binary {o in O, t in T}:
+    use[o,t] <= M * y[o,t];
+
+subject to Min_Use_If_Used {o in O, t in T}:
+    use[o,t] >= 20 * y[o,t];
 
 # At most 3 oils per month
-s.t. MaxThreeOils {t in T}:
-    sum {o in O} z[o,t] <= 3;
+subject to Max_Oils_Per_Month {t in T}:
+    sum {o in O} y[o,t] <= 3;
 
-# Conditional constraint: if VEG1 or VEG2 is used, then OIL3 must be used
-s.t. OilDependency {t in T}:
-    z["VEG1",t] + z["VEG2",t] <= 1 + z["OIL3",t];
+# Conditional usage: if VEG1 or VEG2 used => OIL3 used
+subject to OIL3_if_VEG1_Used {t in T}:
+    y["OIL3",t] >= y["VEG1",t];
 
-# Final storage condition
-s.t. FinalStock {o in O}:
-    s[o,last(T)] = Sinit;
+subject to OIL3_if_VEG2_Used {t in T}:
+    y["OIL3",t] >= y["VEG2",t];
+
+# Final stock requirement
+subject to Final_Stock {o in O}:
+    stock[o,last(T)] = final_stock[o];
 
 

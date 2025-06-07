@@ -1,12 +1,14 @@
+
+
 *************************************************************
 
    NEOS Server Version 6.0
-   Job#     : 16177196
-   Password : nyYRBCmM
+   Job#     : 16177218
+   Password : uqeYakcp
    User     : 
    Solver   : lp:CPLEX:AMPL
-   Start    : 2025-06-07 12:39:58
-   End      : 2025-06-07 12:40:10
+   Start    : 2025-06-07 12:52:32
+   End      : 2025-06-07 12:52:34
    Host     : prod-sub-1.neos-server.org
 
    Disclaimer:
@@ -24,97 +26,56 @@ Checking ampl.com for cplex_options...
 Executing AMPL.
 processing data.
 processing commands.
-Executing on prod-exec-1.neos-server.org
+Executing on prod-exec-5.neos-server.org
 
-Presolve eliminates 5 constraints and 5 variables.
+Presolve eliminates 35 constraints and 5 variables.
 Adjusted problem:
-121 variables:
+115 variables:
 	30 binary variables
-	91 linear variables
-132 constraints, all linear; 416 nonzeros
-	36 equality constraints
-	96 inequality constraints
-1 linear objective; 61 nonzeros.
+	85 linear variables
+132 constraints, all linear; 374 nonzeros
+	30 equality constraints
+	102 inequality constraints
+1 linear objective; 85 nonzeros.
 
 CPLEX 22.1.2:   tech:threads = 4
-CPLEX 22.1.2: optimal solution; objective 104250
-1235 simplex iterations
-137 branching nodes
-:           x     y     s     z    :=
-OIL1 Jan     0     0    500   0
-OIL1 Feb   100    50    550   1
-OIL1 Mar     0    50    500   1
-OIL1 Apr     0     0    500   0
-OIL1 May     0     0    500   0
-OIL1 Jun     0     0    500   0
-OIL2 Jan     0   250    250   1
-OIL2 Feb   150   200    200   1
-OIL2 Mar     0   200      0   1
-OIL2 Apr     0     0      0   0
-OIL2 May     0     0      0   0
-OIL2 Jun   750   250    500   1
-OIL3 Jan     0     0    500   0
-OIL3 Feb     0     0    500   0
-OIL3 Mar   500     0   1000   0
-OIL3 Apr     0   250    750   1
-OIL3 May     0   250    500   1
-OIL3 Jun     0     0    500   0
-VEG1 Jan     0     0    500   0
-VEG1 Feb     0   200    300   1
-VEG1 Mar     0   200    100   1
-VEG1 Apr     0    20     80   1
-VEG1 May     0    80      0   1
-VEG1 Jun   500     0    500   0
-VEG2 Jan     0   200    300   1
-VEG2 Feb     0     0    300   0
-VEG2 Mar     0     0    300   0
-VEG2 Apr     0   180    120   1
-VEG2 May     0   120      0   1
-VEG2 Jun   700   200    500   1
-;
+CPLEX 22.1.2: optimal solution within tolerance; objective 100278.7037
+2179 simplex iterations
+353 branching nodes
+absmipgap=0.841751, relmipgap=8.39411e-06
+Profit = 100279
 
-q [*] :=
-Jan  450
-Feb  450
-Mar  450
-Apr  450
-May  450
-Jun  450
-;
-
-Profit = 104250
-
-:        x[o,t] y[o,t] s[o,t]    :=
-Jan OIL1     0      0     500
-Jan OIL2     0    250     250
-Jan OIL3     0      0     500
-Jan VEG1     0      0     500
-Jan VEG2     0    200     300
-Feb OIL1   100     50     550
-Feb OIL2   150    200     200
-Feb OIL3     0      0     500
-Feb VEG1     0    200     300
-Feb VEG2     0      0     300
-Mar OIL1     0     50     500
-Mar OIL2     0    200       0
-Mar OIL3   500      0    1000
-Mar VEG1     0    200     100
-Mar VEG2     0      0     300
-Apr OIL1     0      0     500
-Apr OIL2     0      0       0
-Apr OIL3     0    250     750
-Apr VEG1     0     20      80
-Apr VEG2     0    180     120
-May OIL1     0      0     500
-May OIL2     0      0       0
-May OIL3     0    250     500
-May VEG1     0     80       0
-May VEG2     0    120       0
-Jun OIL1     0      0     500
-Jun OIL2   750    250     500
-Jun OIL3     0      0     500
-Jun VEG1   500      0     500
-Jun VEG2   700    200     500
+:        buy[o,t]     use[o,t]    stock[o,t] y[o,t]    :=
+Jan OIL1     0        0             500         0
+Jan OIL2     0        0             500         0
+Jan OIL3     0      250             250         1
+Jan VEG1     0       85.1852        414.815     1
+Jan VEG2     0      114.815         385.185     1
+Feb OIL1     0        0             500         0
+Feb OIL2     0        0             500         0
+Feb OIL3     0      250               0         1
+Feb VEG1     0       85.1852        329.63      1
+Feb VEG2     0      114.815         270.37      1
+Mar OIL1     0        0             500         0
+Mar OIL2     0       40             460         1
+Mar OIL3   230      210              20         1
+Mar VEG1     0        0             329.63      0
+Mar VEG2     0      200              70.3704    1
+Apr OIL1     0        0             500         0
+Apr OIL2     0      230             230         1
+Apr OIL3     0       20               0         1
+Apr VEG1     0      155             174.63      1
+Apr VEG2     0        9.09495e-13    70.3704    0
+May OIL1     0        0             500         0
+May OIL2     0      230               0         1
+May OIL3   540       20             520         1
+May VEG1     0      155              19.6296    1
+May VEG2     0        0              70.3704    0
+Jun OIL1     0        0             500         0
+Jun OIL2   730      230             500         1
+Jun OIL3     0       20             500         1
+Jun VEG1   480.37     0             500         0
+Jun VEG2   629.63   200             500         1
 ;
 
 NEOS Server Home
