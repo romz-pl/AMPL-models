@@ -122,8 +122,14 @@ $$
 $$
 
 $$
-10x_1 + 8x_2 + 16x_3 \leq 192 \quad \text{(Drilling constraint)} \\
-20x_1 + 20x_2 + 20x_3 + 20x_4 + 20x_5 \leq 384 \quad \text{(Assembly constraint)} \\
+10x_1 + 8x_2 + 16x_3 \leq 192 \quad \text{(Drilling constraint)}
+$$
+
+$$
+20x_1 + 20x_2 + 20x_3 + 20x_4 + 20x_5 \leq 384 \quad \text{(Assembly constraint)}
+$$
+
+$$
 x_1, x_2, x_3, x_4, x_5 \geq 0
 $$
 
