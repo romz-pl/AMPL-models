@@ -1,0 +1,3 @@
+solve;
+display x, y, z, Profit;
+

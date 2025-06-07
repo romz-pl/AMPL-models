@@ -1,0 +1,76 @@
+*************************************************************
+
+   NEOS Server Version 6.0
+   Job#     : 16177044
+   Password : fIACcimt
+   User     : 
+   Solver   : lp:CPLEX:AMPL
+   Start    : 2025-06-07 10:55:52
+   End      : 2025-06-07 10:56:01
+   Host     : prod-sub-1.neos-server.org
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information for any particular purpose.
+
+   Announcements:
+*************************************************************
+You are using the solver cplexamp.
+Checking ampl.mod for cplex_options...
+Checking ampl.com for cplex_options...
+Executing AMPL.
+processing data.
+processing commands.
+Executing on prod-exec-1.neos-server.org
+
+Presolve eliminates 35 constraints and 5 variables.
+Adjusted problem:
+85 variables, all linear
+54 constraints, all linear; 200 nonzeros
+	30 equality constraints
+	24 inequality constraints
+1 linear objective; 85 nonzeros.
+
+CPLEX 22.1.2:   tech:threads = 4
+CPLEX 22.1.2: optimal solution; objective 107842.5926
+59 simplex iterations
+:             x         y          z        :=
+OIL1 Jan     0         0        500
+OIL1 Feb     0         0        500
+OIL1 Mar     0         0        500
+OIL1 Apr     0         0        500
+OIL1 May     0         0        500
+OIL1 Jun     0         0        500
+OIL2 Jan     0       250        250
+OIL2 Feb   750       250        750
+OIL2 Mar     0       250        500
+OIL2 Apr     0       250        250
+OIL2 May     0       250          0
+OIL2 Jun   750       250        500
+OIL3 Jan     0         0        500
+OIL3 Feb     0         0        500
+OIL3 Mar     0         0        500
+OIL3 Apr     0         0        500
+OIL3 May     0         0        500
+OIL3 Jun     0         0        500
+VEG1 Jan     0        22.2222   477.778
+VEG1 Feb     0         0        477.778
+VEG1 Mar     0       159.259    318.519
+VEG1 Apr     0       159.259    159.259
+VEG1 May     0       159.259      0
+VEG1 Jun   659.259   159.259    500
+VEG2 Jan     0       177.778    322.222
+VEG2 Feb     0       200        122.222
+VEG2 Mar     0        40.7407    81.4815
+VEG2 Apr     0        40.7407    40.7407
+VEG2 May     0        40.7407     0
+VEG2 Jun   540.741    40.7407   500
+;
+
+Profit = 107843
+
+NEOS Server Home
+
