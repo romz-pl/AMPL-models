@@ -1,0 +1,29 @@
+set T := Jan Feb Mar Apr May Jun;
+set O := VEG1 VEG2 OIL1 OIL2 OIL3;
+set V := VEG1 VEG2;
+set N := OIL1 OIL2 OIL3;
+
+param p: Jan Feb Mar Apr May Jun :=
+VEG1  110 130 110 120 100 90
+VEG2  120 130 140 110 120 100
+OIL1  130 110 130 120 150 140
+OIL2  110 90  100 120 110 80
+OIL3  115 115 95  125 105 135;
+
+param h :=
+VEG1 8.8
+VEG2 6.1
+OIL1 2.0
+OIL2 4.2
+OIL3 5.0;
+
+param c := 150;
+param Rv := 200;
+param Rn := 250;
+param Smax := 1000;
+param Sinit := 500;
+param Hmin := 3;
+param Hmax := 6;
+param s_cost := 5;
+param BigM := 1000;
+

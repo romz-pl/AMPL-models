@@ -1,0 +1,7 @@
+
+solve;
+display x, y, s, z, q, Profit;
+
+
+display {t in T, o in O} (x[o, t], y[o, t], s[o, t]);
+

@@ -1,0 +1,121 @@
+*************************************************************
+
+   NEOS Server Version 6.0
+   Job#     : 16177197
+   Password : LtZyPkVv
+   User     : 
+   Solver   : lp:Gurobi:AMPL
+   Start    : 2025-06-07 12:40:04
+   End      : 2025-06-07 12:40:10
+   Host     : prod-sub-1.neos-server.org
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information for any particular purpose.
+
+   Announcements:
+*************************************************************
+You are using the solver gurobi_ampl.
+Checking ampl.mod for gurobi_options...
+Checking ampl.com for gurobi_options...
+Executing AMPL.
+processing data.
+processing commands.
+Executing on prod-exec-5.neos-server.org
+
+Presolve eliminates 5 constraints and 5 variables.
+Adjusted problem:
+121 variables:
+	30 binary variables
+	91 linear variables
+132 constraints, all linear; 416 nonzeros
+	36 equality constraints
+	96 inequality constraints
+1 linear objective; 61 nonzeros.
+
+Gurobi 12.0.1:   tech:threads = 4
+Gurobi 12.0.1: optimal solution; objective 104250
+3236 simplex iterations
+360 branching nodes
+:           x     y     s    z    :=
+OIL1 Jan     0     0   500   0
+OIL1 Feb     0    50   450   1
+OIL1 Mar     0     0   450   0
+OIL1 Apr   100    50   500   1
+OIL1 May     0     0   500   0
+OIL1 Jun     0     0   500   0
+OIL2 Jan     0     0   500   0
+OIL2 Feb     0   200   300   1
+OIL2 Mar     0     0   300   0
+OIL2 Apr     0   200   100   1
+OIL2 May     0   100     0   1
+OIL2 Jun   750   250   500   1
+OIL3 Jan     0   250   250   1
+OIL3 Feb     0     0   250   0
+OIL3 Mar     0   250     0   1
+OIL3 Apr     0     0     0   0
+OIL3 May   650   150   500   1
+OIL3 Jun     0     0   500   0
+VEG1 Jan     0    80   420   1
+VEG1 Feb     0   200   220   1
+VEG1 Mar     0    20   200   1
+VEG1 Apr     0   200     0   1
+VEG1 May     0     0     0   0
+VEG1 Jun   500     0   500   0
+VEG2 Jan     0   120   380   1
+VEG2 Feb     0     0   380   0
+VEG2 Mar     0   180   200   1
+VEG2 Apr     0     0   200   0
+VEG2 May     0   200     0   1
+VEG2 Jun   700   200   500   1
+;
+
+q [*] :=
+Jan  450
+Feb  450
+Mar  450
+Apr  450
+May  450
+Jun  450
+;
+
+Profit = 104250
+
+:        x[o,t] y[o,t] s[o,t]    :=
+Jan OIL1     0      0    500
+Jan OIL2     0      0    500
+Jan OIL3     0    250    250
+Jan VEG1     0     80    420
+Jan VEG2     0    120    380
+Feb OIL1     0     50    450
+Feb OIL2     0    200    300
+Feb OIL3     0      0    250
+Feb VEG1     0    200    220
+Feb VEG2     0      0    380
+Mar OIL1     0      0    450
+Mar OIL2     0      0    300
+Mar OIL3     0    250      0
+Mar VEG1     0     20    200
+Mar VEG2     0    180    200
+Apr OIL1   100     50    500
+Apr OIL2     0    200    100
+Apr OIL3     0      0      0
+Apr VEG1     0    200      0
+Apr VEG2     0      0    200
+May OIL1     0      0    500
+May OIL2     0    100      0
+May OIL3   650    150    500
+May VEG1     0      0      0
+May VEG2     0    200      0
+Jun OIL1     0      0    500
+Jun OIL2   750    250    500
+Jun OIL3     0      0    500
+Jun VEG1   500      0    500
+Jun VEG2   700    200    500
+;
+
+NEOS Server Home
+
