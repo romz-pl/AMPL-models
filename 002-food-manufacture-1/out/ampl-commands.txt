@@ -1,3 +1,10 @@
+
 solve;
 display x, y, z, Profit;
+
+
+display {o in O, t in T} (x[o, t], y[o, t], z[o, t]);
+
+
+display {t in T, o in O} (x[o, t], y[o, t], z[o, t]);
 
