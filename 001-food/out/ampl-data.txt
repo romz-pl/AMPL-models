@@ -1,0 +1,16 @@
+set OILS := VEG1 VEG2 OIL1 OIL2 OIL3;
+
+param: cost hardness :=
+VEG1   110    8.8
+VEG2   120    6.1
+OIL1   130    2.0
+OIL2   110    4.2
+OIL3   115    5.0 ;
+
+set VEG_OILS := VEG1 VEG2;
+set NONVEG_OILS := OIL1 OIL2 OIL3;
+
+param max_veg := 200;
+param max_nonveg := 250;
+param price := 150;
+

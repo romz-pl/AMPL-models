@@ -1,0 +1,24 @@
+Provide mathematical model for the following problem.
+-----
+A food is manufactured by refining raw oils and blending them together. The
+raw oils come in two categories:
+Vegetable oils: VEG1, VEG2
+Non-vegetable oils: OIL1, OIL2, OIL3
+
+Vegetable oils and non-vegetable oils require different production lines for reﬁning. 
+In any month, it is not possible to reﬁne more than 200 tons of vegetable
+oil and more than 250 tons of non-vegetable oils. There is no loss of weight in
+the reﬁning process and the cost of reﬁning may be ignored.
+
+There is a technological restriction of hardness in the ﬁnal product. In the
+units in which hardness is measured, this must lie between 3 and 6. It is assumed
+that hardness blends linearly. The costs (per ton) and hardness of the raw oils are
+         VEG1 VEG2 OIL1 OIL2 OIL3
+Cost     £110 £120 £130 £110 £115
+Hardness  8.8  6.1  2.0  4.2  5.0
+
+The ﬁnal product sells for £150 per ton.
+
+How should the food manufacturer make their product in order to maximize their net profit?
+-----
+
