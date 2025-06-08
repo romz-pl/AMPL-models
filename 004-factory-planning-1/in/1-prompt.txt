@@ -1,0 +1,4 @@
+Based on the generated mathematical problem, formulate an AMPL program.
+Generate an AMPL model file that is easy to copy in one part.
+Generate an AMPL data file that is easy to copy in one part.
+
