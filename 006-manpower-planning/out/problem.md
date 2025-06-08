@@ -94,7 +94,7 @@ Let the following be the decision variables for each year $t$:
 Minimize total redundancy:
 
 $$
-\min \sum_{t=1}^{3} \left[ 200 \cdot \text{Red}_{t,U} + 500 \cdot (\text{Red}_{t,S} + \text{Red}_{t,K}) \right]
+\text{Minimize } \sum_{t=1}^{3} \left[ 200 \cdot \text{Red}_{t,U} + 500 \cdot (\text{Red}_{t,S} + \text{Red}_{t,K}) \right]
 $$
 
 ---
