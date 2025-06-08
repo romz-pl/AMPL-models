@@ -1,0 +1,96 @@
+# Sets
+set PROD := PROD1 PROD2 PROD3 PROD4 PROD5 PROD6 PROD7;
+set MONTH := Jan Feb Mar Apr May Jun;
+set MACHINES := grinder vdrill hdrill borer planer;
+
+# Profit per unit
+param profit :=
+  PROD1 10
+  PROD2 6
+  PROD3 8
+  PROD4 4
+  PROD5 11
+  PROD6 9
+  PROD7 3 ;
+
+# Machine usage (hours per unit)
+param usage :=
+  PROD1 grinder   0.5
+  PROD2 grinder   0.7
+  PROD5 grinder   0.3
+  PROD6 grinder   0.2
+  PROD7 grinder   0.5
+
+  PROD1 vdrill    0.1
+  PROD2 vdrill    0.2
+  PROD4 vdrill    0.3
+  PROD6 vdrill    0.6
+
+  PROD1 hdrill    0.2
+  PROD3 hdrill    0.8
+  PROD7 hdrill    0.6
+
+  PROD1 borer     0.05
+  PROD2 borer     0.03
+  PROD4 borer     0.07
+  PROD5 borer     0.1
+  PROD7 borer     0.08
+
+  PROD3 planer    0.01
+  PROD5 planer    0.05
+  PROD7 planer    0.05 ;
+
+
+# Machine availability per month (machine hours)
+# 24 days * 2 shifts * 8 hours = 384 hours/day per machine
+param avail :=
+[Jan,grinder]   1152
+[Jan,vdrill]     768
+[Jan,hdrill]    1152
+[Jan,borer]      384
+[Jan,planer]     384
+
+[Feb,grinder]   1536
+[Feb,vdrill]     768
+[Feb,hdrill]     384
+[Feb,borer]      384
+[Feb,planer]     384
+
+[Mar,grinder]   1536
+[Mar,vdrill]     768
+[Mar,hdrill]    1152
+[Mar,borer]        0
+[Mar,planer]     384
+
+[Apr,grinder]   1536
+[Apr,vdrill]     384
+[Apr,hdrill]    1152
+[Apr,borer]      384
+[Apr,planer]     384
+
+[May,grinder]   1152
+[May,vdrill]     384
+[May,hdrill]    1152
+[May,borer]      384
+[May,planer]     384
+
+[Jun,grinder]   1536
+[Jun,vdrill]     768
+[Jun,hdrill]     768
+[Jun,borer]      384
+[Jun,planer]       0 ;
+
+
+# Demand limits
+param demand :=
+[Jan,*] PROD1 500 PROD2 1000 PROD3 300 PROD4 300 PROD5 800 PROD6 200 PROD7 100
+[Feb,*] PROD1 600 PROD2 500 PROD3 200 PROD4 0 PROD5 400 PROD6 300 PROD7 150
+[Mar,*] PROD1 300 PROD2 600 PROD3 0 PROD4 0 PROD5 500 PROD6 400 PROD7 100
+[Apr,*] PROD1 200 PROD2 300 PROD3 400 PROD4 500 PROD5 200 PROD6 0 PROD7 100
+[May,*] PROD1 0 PROD2 100 PROD3 500 PROD4 100 PROD5 1000 PROD6 300 PROD7 0
+[Jun,*] PROD1 500 PROD2 500 PROD3 100 PROD4 300 PROD5 1100 PROD6 500 PROD7 60 ;
+
+# Inventory and storage parameters
+param hold_cost := 0.5;
+param max_store := 100;
+param final_stock := 50;
