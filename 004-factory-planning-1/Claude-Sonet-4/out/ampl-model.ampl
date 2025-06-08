@@ -1,6 +1,3 @@
-# Factory Production Planning Model
-# File: factory.mod
-
 # Sets
 set PRODUCTS;
 set MONTHS ordered;
