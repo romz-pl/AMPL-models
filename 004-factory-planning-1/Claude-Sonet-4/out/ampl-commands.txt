@@ -1,0 +1,2 @@
+solve;
+display{m in MONTHS, p in PRODUCTS} (production[p, m], sales[p, m], inventory[p, m]);

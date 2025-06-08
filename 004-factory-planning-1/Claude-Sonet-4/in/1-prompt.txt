@@ -1,0 +1,11 @@
+Based on the generated mathematical problem, formulate an AMPL program.
+Generate an AMPL model file that is easy to copy in one part.
+Generate an AMPL data file that is easy to copy in one part.
+Remember that if...then...else expression inside a constraint in AMPL must be used as an expression, not as a statement block like in programming languages.
+Remember to use the ordered set if any of the functions ord(), prev(), or first() are used in the AMPL model.
+Do not create any user-defined functions, since AMPL does not support user-defined functions.
+In AMPL data file:
++ Do not use arithmetic expressions directly.
++ Do not use keyword (tr) for defining sparse 2D parameters.
+
+

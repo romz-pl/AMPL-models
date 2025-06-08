@@ -1,2 +1,0 @@
-solve;
-display x, y, s, Total_Profit;

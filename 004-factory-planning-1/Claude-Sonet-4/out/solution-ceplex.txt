@@ -1,0 +1,85 @@
+*************************************************************
+
+   NEOS Server Version 6.0
+   Job#     : 16178032
+   Password : oDfHxFcJ
+   User     : 
+   Solver   : lp:CPLEX:AMPL
+   Start    : 2025-06-08 01:19:22
+   End      : 2025-06-08 01:19:30
+   Host     : prod-sub-1.neos-server.org
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information for any particular purpose.
+
+   Announcements:
+*************************************************************
+You are using the solver cplexamp.
+Checking ampl.mod for cplex_options...
+Checking ampl.com for cplex_options...
+Executing AMPL.
+processing data.
+processing commands.
+Executing on prod-exec-6.neos-server.org
+
+Presolve eliminates 130 constraints and 21 variables.
+Adjusted problem:
+105 variables, all linear
+75 constraints, all linear; 228 nonzeros
+	42 equality constraints
+	33 inequality constraints
+1 linear objective; 71 nonzeros.
+
+CPLEX 22.1.2:   tech:threads = 4
+CPLEX 22.1.2: optimal solution; objective 94725
+0 simplex iterations
+:         production[p,m] sales[p,m] inventory[p,m]    :=
+Jan PROD1        500           500           0
+Jan PROD2       1000          1000           0
+Jan PROD3        300           300           0
+Jan PROD4        300           300           0
+Jan PROD5        800           800           0
+Jan PROD6        200           200           0
+Jan PROD7        100           100           0
+Feb PROD1        700           600         100
+Feb PROD2        600           500         100
+Feb PROD3        200           200           0
+Feb PROD4          0             0           0
+Feb PROD5        500           400         100
+Feb PROD6        300           300           0
+Feb PROD7        250           150         100
+Mar PROD1          0           100           0
+Mar PROD2          0           100           0
+Mar PROD3          0             0           0
+Mar PROD4          0             0           0
+Mar PROD5          0           100           0
+Mar PROD6        400           400           0
+Mar PROD7          0           100           0
+Apr PROD1        200           200           0
+Apr PROD2        300           300           0
+Apr PROD3        400           400           0
+Apr PROD4        500           500           0
+Apr PROD5        200           200           0
+Apr PROD6          0             0           0
+Apr PROD7        100           100           0
+May PROD1          0             0           0
+May PROD2        100           100           0
+May PROD3        600           500         100
+May PROD4        100           100           0
+May PROD5       1100          1000         100
+May PROD6        300           300           0
+May PROD7        100             0         100
+Jun PROD1        550           500          50
+Jun PROD2        550           500          50
+Jun PROD3          0            50          50
+Jun PROD4        350           300          50
+Jun PROD5          0            50          50
+Jun PROD6        550           500          50
+Jun PROD7          0            50          50
+;
+
+NEOS Server Home

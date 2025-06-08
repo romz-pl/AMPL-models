@@ -1,0 +1,62 @@
+# Factory Production Planning Data
+# File: factory.dat
+
+# Sets
+set PRODUCTS := PROD1 PROD2 PROD3 PROD4 PROD5 PROD6 PROD7;
+set MONTHS := Jan Feb Mar Apr May Jun;
+set MACHINES := Grinding VerticalDrill HorizontalDrill Boring Planing;
+
+# Profit contribution per unit
+param profit :=
+PROD1 10
+PROD2 6
+PROD3 8
+PROD4 4
+PROD5 11
+PROD6 9
+PROD7 3;
+
+# Marketing demand limits
+param demand :
+        Jan  Feb  Mar  Apr  May  Jun :=
+PROD1   500  600  300  200    0  500
+PROD2  1000  500  600  300  100  500
+PROD3   300  200    0  400  500  100
+PROD4   300    0    0  500  100  300
+PROD5   800  400  500  200 1000 1100
+PROD6   200  300  400    0  300  500
+PROD7   100  150  100  100    0   60;
+
+# Process time requirements (hours per unit)
+param process_time :
+                    Grinding  VerticalDrill  HorizontalDrill  Boring  Planing :=
+PROD1                   0.5           0.1             0.2    0.05        0
+PROD2                   0.7           0.2               0    0.03        0
+PROD3                     0             0             0.8       0     0.01
+PROD4                     0           0.3               0    0.07        0
+PROD5                   0.3             0               0     0.1     0.05
+PROD6                   0.2           0.6               0       0        0
+PROD7                   0.5             0             0.6    0.08     0.05;
+
+# Base machine capacity (number of machines normally available)
+param machine_capacity :=
+Grinding        4
+VerticalDrill   2
+HorizontalDrill 3
+Boring          1
+Planing         1;
+
+# Machines available each month (accounting for maintenance)
+param machines_available :
+                Jan  Feb  Mar  Apr  May  Jun :=
+Grinding          3    4    4    4    3    4
+VerticalDrill     2    2    2    1    1    2
+HorizontalDrill   3    1    3    3    3    2
+Boring            1    1    0    1    1    1
+Planing           1    1    1    1    1    0;
+
+# Other parameters
+param storage_cost := 0.5;
+param max_storage := 100;
+param final_inventory := 50;
+param working_hours_per_month := 384;
