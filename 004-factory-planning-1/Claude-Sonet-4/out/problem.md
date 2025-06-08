@@ -64,7 +64,7 @@ For each product $i$ and each month $j$:
 $$s_{ij} = s_{i,j-1} + x_{ij} - \text{sales}_{ij}$$
 
 Assuming maximum sales (up to marketing limit):
-$$\text{sales}_{ij} = \text{min}(s_{i,{j-1}} + x_{ij}, d_{ij})$$
+$${\text{sales}}_{ij} = \text{min}(s_{i,{j-1}} + x_{ij}, d_{ij})$$
 
 This can be linearized as:
 $$s_{ij} \geq s_{i,j-1} + x_{ij} - d_{ij}$$
