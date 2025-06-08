@@ -1,0 +1,172 @@
+*************************************************************
+
+   NEOS Server Version 6.0
+   Job#     : 16178995
+   Password : FGeIBoyu
+   User     : 
+   Solver   : lp:Gurobi:AMPL
+   Start    : 2025-06-08 07:14:39
+   End      : 2025-06-08 07:14:41
+   Host     : prod-sub-1.neos-server.org
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information for any particular purpose.
+
+   Announcements:
+*************************************************************
+You are using the solver gurobi_ampl.
+Checking ampl.mod for gurobi_options...
+Checking ampl.com for gurobi_options...
+Executing AMPL.
+processing data.
+processing commands.
+Executing on prod-exec-6.neos-server.org
+
+"option presolve 10;" used, but "option presolve 3;" would suffice.
+60 variables:
+	40 binary variables
+	20 linear variables
+66 constraints, all linear; 151 nonzeros
+	5 equality constraints
+	61 inequality constraints
+1 linear objective; 40 nonzeros.
+
+Gurobi 12.0.1:   tech:threads = 4
+Set parameter LogToConsole to value 1
+  tech:outlev = 1
+
+AMPL MP initial flat model has 60 variables (0 integer, 40 binary);
+Objectives: 1 linear; 
+Constraints:  66 linear;
+
+AMPL MP final model has 60 variables (0 integer, 40 binary);
+Objectives: 1 linear; 
+Constraints:  66 linear;
+
+
+Set parameter InfUnbdInfo to value 1
+Gurobi Optimizer version 12.0.1 build v12.0.1rc0 (linux64 - "Rocky Linux 8.10 (Green Obsidian)")
+
+CPU model: Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 36 physical cores, 72 logical processors, using up to 4 threads
+
+Non-default parameters:
+InfUnbdInfo  1
+Threads  4
+
+Optimize a model with 66 rows, 60 columns and 151 nonzeros
+Model fingerprint: 0x2fd31e74
+Variable types: 20 continuous, 40 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e-01, 3e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+00, 3e+00]
+Found heuristic solution: objective -0.0000000
+Presolve removed 8 rows and 8 columns
+Presolve time: 0.00s
+Presolved: 58 rows, 52 columns, 135 nonzeros
+Variable types: 16 continuous, 36 integer (36 binary)
+
+Root relaxation: objective 1.433916e+02, 41 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  143.39160    0    4   -0.00000  143.39160      -     -    0s
+H    0     0                     118.4280742  143.39160  21.1%     -    0s
+     0     0  137.17315    0    2  118.42807  137.17315  15.8%     -    0s
+H    0     0                     133.5107492  137.05268  2.65%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  MIR: 2
+  Flow cover: 4
+  RLT: 2
+
+Explored 1 nodes (46 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 4 (of 72 available processors)
+
+Solution count 3: 133.511 118.428 -0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.335107491667e+02, best bound 1.335107491667e+02, gap 0.0000%
+Gurobi 12.0.1: optimal solution; objective 133.5107492
+46 simplex iterations
+1 branching node
+NPV = 133.511
+
+x[m,j] :=
+1 Mine1   2
+1 Mine2   0
+1 Mine3   1.3
+1 Mine4   2.45
+2 Mine1   0
+2 Mine2   2.5
+2 Mine3   1.3
+2 Mine4   2.2
+3 Mine1   1.95
+3 Mine2   0
+3 Mine3   1.3
+3 Mine4   0
+4 Mine1   0.125
+4 Mine2   2.5
+4 Mine3   0
+4 Mine4   3
+5 Mine1   2
+5 Mine2   2.16667
+5 Mine3   1.3
+5 Mine4   0
+;
+
+y[m,j] :=
+1 Mine1   1
+1 Mine2   0
+1 Mine3   1
+1 Mine4   1
+2 Mine1   0
+2 Mine2   1
+2 Mine3   1
+2 Mine4   1
+3 Mine1   1
+3 Mine2   1
+3 Mine3   1
+3 Mine4   0
+4 Mine1   1
+4 Mine2   1
+4 Mine3   0
+4 Mine4   1
+5 Mine1   1
+5 Mine2   1
+5 Mine3   1
+5 Mine4   0
+;
+
+z[m,j] :=
+1 Mine1   1
+1 Mine2   1
+1 Mine3   1
+1 Mine4   1
+2 Mine1   1
+2 Mine2   1
+2 Mine3   1
+2 Mine4   1
+3 Mine1   1
+3 Mine2   1
+3 Mine3   1
+3 Mine4   1
+4 Mine1   1
+4 Mine2   1
+4 Mine3   1
+4 Mine4   1
+5 Mine1   1
+5 Mine2   1
+5 Mine3   1
+5 Mine4   0
+;
+
+NEOS Server Home

@@ -1,0 +1,36 @@
+set Mines := Mine1 Mine2 Mine3 Mine4;
+set Years := 1 2 3 4 5;
+
+param R :=
+  Mine1 5
+  Mine2 4
+  Mine3 4
+  Mine4 5;
+
+param C :=
+  Mine1 2.0
+  Mine2 2.5
+  Mine3 1.3
+  Mine4 3.0;
+
+param Q :=
+  Mine1 1.0
+  Mine2 0.7
+  Mine3 1.5
+  Mine4 0.5;
+
+param q :=
+  1 0.9
+  2 0.8
+  3 1.2
+  4 0.6
+  5 1.0;
+
+param d :=
+  1 0.90909
+  2 0.82645
+  3 0.75131
+  4 0.68301
+  5 0.62092;
+
+param p := 10;
