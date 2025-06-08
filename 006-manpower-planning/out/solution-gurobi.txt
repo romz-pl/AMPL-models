@@ -1,0 +1,70 @@
+
+
+*************************************************************
+
+   NEOS Server Version 6.0
+   Job#     : 16178931
+   Password : AIPcOeGw
+   User     : 
+   Solver   : lp:Gurobi:AMPL
+   Start    : 2025-06-08 06:33:09
+   End      : 2025-06-08 06:33:11
+   Host     : prod-sub-1.neos-server.org
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information for any particular purpose.
+
+   Announcements:
+*************************************************************
+You are using the solver gurobi_ampl.
+Checking ampl.mod for gurobi_options...
+Checking ampl.com for gurobi_options...
+Executing AMPL.
+processing data.
+processing commands.
+Executing on prod-exec-1.neos-server.org
+
+Presolve eliminates 4 constraints and 7 variables.
+"option presolve 10;" used, but "option presolve 6;" would suffice.
+Adjusted problem:
+35 variables, all linear
+19 constraints, all linear; 70 nonzeros
+	6 equality constraints
+	13 inequality constraints
+1 linear objective; 9 nonzeros.
+
+presolve: constraint Overmanning_Constraint[1] cannot hold:
+	body <= -950 cannot be >= 0; difference = -950
+presolve: constraint Demand_Constraint[2,'S'] cannot hold:
+	body >= 2000 cannot be <= 1980; difference = 20
+presolve: constraint Demand_Constraint[2,'U'] cannot hold:
+	body >= 500 cannot be <= 427.222; difference = 72.7778
+presolve: constraint Demand_Constraint[2,'K'] cannot hold:
+	body >= 1500 cannot be <= 1480; difference = 20
+presolve: constraint Overmanning_Constraint[1] cannot hold:
+	body <= -950 cannot be >= 22.2222; difference = -972.222
+TotalRedundancy = 0
+
+:      W   Rec Red  ST    :=
+1 K   1000   0   0   0
+1 S   1500   0   0   0
+1 U   2000   0   0   0
+2 K      0   0   0   0
+2 S      0   0   0   0
+2 U      0   0   0   0
+3 K      0   0   0   0
+3 S      0   0   0   0
+3 U      0   0   0   0
+;
+
+: RT_U_S RT_S_K    :=
+1    0      0
+2    0      0
+3    0      0
+;
+
+NEOS Server Home
