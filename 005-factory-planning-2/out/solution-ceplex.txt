@@ -1,0 +1,161 @@
+*************************************************************
+
+   NEOS Server Version 6.0
+   Job#     : 16178815
+   Password : AbeSZzCx
+   User     : 
+   Solver   : lp:CPLEX:AMPL
+   Start    : 2025-06-08 05:18:12
+   End      : 2025-06-08 05:18:14
+   Host     : prod-sub-1.neos-server.org
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information for any particular purpose.
+
+   Announcements:
+*************************************************************
+You are using the solver cplexamp.
+Checking ampl.mod for cplex_options...
+Checking ampl.com for cplex_options...
+Executing AMPL.
+processing data.
+processing commands.
+Executing on prod-exec-7.neos-server.org
+
+Presolve eliminates 103 constraints and 13 variables.
+"option presolve 10;" used, but "option presolve 2;" would suffice.
+Adjusted problem:
+143 variables:
+	30 binary variables
+	113 linear variables
+65 constraints, all linear; 270 nonzeros
+	47 equality constraints
+	18 inequality constraints
+1 linear objective; 71 nonzeros.
+
+CPLEX 22.1.2:   tech:threads = 4
+  tech:outlev = 1
+ - Version identifier: 22.1.2.0 | 2024-11-26 | 0edbb82fd
+ - CPXPARAM_Threads                                 4
+ - CPXPARAM_MIP_Display                             3
+ - Tried aggregator 3 times.
+ - MIP Presolve eliminated 10 rows and 23 columns.
+ - MIP Presolve added 1 rows and 0 columns.
+ - MIP Presolve modified 36 coefficients.
+ - Aggregator did 10 substitutions.
+ - Reduced MIP has 46 rows, 111 columns, and 197 nonzeros.
+ - Reduced MIP has 12 binaries, 0 generals, 0 SOSs, and 0 indicators.
+ - Presolve time = 0.00 sec. (0.23 ticks)
+ - Found incumbent of value 10750.000000 after 0.00 sec. (0.33 ticks)
+ - Probing time = 0.00 sec. (0.02 ticks)
+ - Tried aggregator 2 times.
+ - MIP Presolve eliminated 3 rows and 11 columns.
+ - MIP Presolve added 2 rows and 0 columns.
+ - Aggregator did 2 substitutions.
+ - Reduced MIP has 43 rows, 98 columns, and 183 nonzeros.
+ - Reduced MIP has 12 binaries, 0 generals, 0 SOSs, and 0 indicators.
+ - Presolve time = 0.00 sec. (0.11 ticks)
+ - Probing time = 0.00 sec. (0.02 ticks)
+ - Tried aggregator 1 time.
+ - Detecting symmetries...
+ - Reduced MIP has 43 rows, 98 columns, and 183 nonzeros.
+ - Reduced MIP has 12 binaries, 0 generals, 0 SOSs, and 0 indicators.
+ - Presolve time = 0.00 sec. (0.11 ticks)
+ - Probing time = 0.00 sec. (0.02 ticks)
+ - Clique table members: 2.
+ - MIP emphasis: balance optimality and feasibility.
+ - MIP search method: dynamic search.
+ - Parallel mode: deterministic, using up to 4 threads.
+ - Root relaxation solution time = 0.00 sec. (0.08 ticks)
+ - 
+        Nodes                                         Cuts/
+ -    Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+ - *     0+    0                        95975.0000   116455.0000            21.34%
+ - Found incumbent of value 95975.000000 after 0.01 sec. (2.79 ticks)
+ -       0     0   116455.0000     8    95975.0000   116455.0000        6   21.34%
+ - *     0+    0                       101905.0000   116455.0000            14.28%
+ - Found incumbent of value 101905.000000 after 0.01 sec. (2.94 ticks)
+ -       0     0   109400.3143     5   101905.0000      Cuts: 40       56    7.36%
+ - *     0+    0                       108855.0000   109400.3143             0.50%
+ - Found incumbent of value 108855.000000 after 0.02 sec. (3.63 ticks)
+ -       0     0        cutoff         108855.0000                     56     --- 
+ - Elapsed time = 0.02 sec. (3.64 ticks, tree = 0.01 MB, solutions = 5)
+ - 
+ - Implied bound cuts applied:  19
+ - Flow cuts applied:  1
+ - Mixed integer rounding cuts applied:  3
+ - Gomory fractional cuts applied:  3
+ - 
+Root node processing (before b&c):
+ -   Real time             =    0.02 sec. (3.65 ticks)
+ - Parallel b&c, 4 threads:
+ -   Real time             =    0.00 sec. (0.00 ticks)
+ -   Sync time (average)   =    0.00 sec.
+ -   Wait time (average)   =    0.00 sec.
+ -                           ------------
+ - Total (root+branch&cut) =    0.02 sec. (3.65 ticks)
+CPLEX 22.1.2: optimal solution; objective 108855
+56 simplex iterations
+Total_Profit = 108855
+
+d[j,m] [*,*]
+:        Borer Grinding HorizontalDrill Planer VerticalDrill    :=
+January     0      0            1          0          0
+February    0      0            0          0          0
+March       0      1            0          0          0
+April       1      0            0          1          0
+May         0      1            0          0          1
+June        0      0            0          0          0
+;
+
+:              x[p,m] y[p,m]      s[p,m]        :=
+January  PROD1    500    500     0
+January  PROD2   1000   1000     0
+January  PROD3    300    300     0
+January  PROD4    300    300     0
+January  PROD5    800    800     0
+January  PROD6    200    200     0
+January  PROD7    100    100     0
+February PROD1    600    600    -1.7053e-13
+February PROD2    500    500    -1.13687e-13
+February PROD3    200    200     0
+February PROD4      0      0     0
+February PROD5    400    400    -1.7053e-12
+February PROD6    300    300     0
+February PROD7    150    150     0
+March    PROD1    400    300   100
+March    PROD2    700    600   100
+March    PROD3    100      0   100
+March    PROD4    100      0   100
+March    PROD5    600    500   100
+March    PROD6    400    400     0
+March    PROD7    200    100   100
+April    PROD1      0    100     0
+April    PROD2      0    100     0
+April    PROD3      0    100     0
+April    PROD4      0    100     0
+April    PROD5      0    100     0
+April    PROD6      0      0     0
+April    PROD7      0    100     0
+May      PROD1      0      0     0
+May      PROD2    100    100     0
+May      PROD3    500    500     0
+May      PROD4    100    100     0
+May      PROD5   1000   1000     0
+May      PROD6    300    300     0
+May      PROD7      0      0     0
+June     PROD1    550    500    50
+June     PROD2    550    500    50
+June     PROD3    150    100    50
+June     PROD4    350    300    50
+June     PROD5   1150   1100    50
+June     PROD6    550    500    50
+June     PROD7    110     60    50
+;
+
+NEOS Server Home

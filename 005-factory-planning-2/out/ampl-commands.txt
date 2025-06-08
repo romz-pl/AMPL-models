@@ -1,0 +1,15 @@
+option presolve 10;
+option show_stats 2;
+# option times 1;
+# option gentimes 1;
+
+option cplex_options  'tech:outlev=1';
+option gurobi_options 'tech:outlev=1';
+option highs_options  'tech:outlev=1';
+
+solve;
+display Total_Profit;
+
+display{ m in MONTHS, j in MACHINES} (d[j,m]);
+
+display{m in MONTHS, p in PROD} (x[p,m], y[p,m], s[p,m]);
