@@ -1,0 +1,70 @@
+*************************************************************
+
+   NEOS Server Version 6.0
+   Job#     : 16222655
+   Password : viNtkhSG
+   User     : 
+   Solver   : lp:CPLEX:AMPL
+   Start    : 2025-06-09 12:44:15
+   End      : 2025-06-09 12:44:18
+   Host     : prod-sub-1.neos-server.org
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information for any particular purpose.
+
+   Announcements:
+*************************************************************
+You are using the solver cplexamp.
+Checking ampl.mod for cplex_options...
+Checking ampl.com for cplex_options...
+Executing AMPL.
+processing data.
+processing commands.
+Executing on prod-exec-7.neos-server.org
+
+Presolve eliminates 2 constraints.
+"option presolve 10;" used, but "option presolve 2;" would suffice.
+Adjusted problem:
+2 variables, all integer
+2 constraints, all linear; 4 nonzeros
+	2 inequality constraints
+1 linear objective; 2 nonzeros.
+
+CPLEX 22.1.2:   tech:threads = 4
+  tech:outlev = 1
+ - Version identifier: 22.1.2.0 | 2024-11-26 | 0edbb82fd
+ - CPXPARAM_Threads                                 4
+ - CPXPARAM_MIP_Display                             3
+ - Found incumbent of value 0.000000 after 0.00 sec. (0.00 ticks)
+ - Tried aggregator 1 time.
+ - Reduced MIP has 2 rows, 2 columns, and 4 nonzeros.
+ - Reduced MIP has 0 binaries, 2 generals, 0 SOSs, and 0 indicators.
+ - Presolve time = 0.00 sec. (0.00 ticks)
+ - Tried aggregator 2 times.
+ - MIP Presolve eliminated 1 rows and 1 columns.
+ - Aggregator did 1 substitutions.
+ - All rows and columns eliminated.
+ - Presolve time = 0.00 sec. (0.00 ticks)
+ - 
+Root node processing (before b&c):
+ -   Real time             =    0.00 sec. (0.01 ticks)
+ - Parallel b&c, 4 threads:
+ -   Real time             =    0.00 sec. (0.00 ticks)
+ -   Sync time (average)   =    0.00 sec.
+ -   Wait time (average)   =    0.00 sec.
+ -                           ------------
+ - Total (root+branch&cut) =    0.00 sec. (0.01 ticks)
+CPLEX 22.1.2: optimal solution; objective 250000
+0 simplex iterations
+Total_Revenue = 250000
+
+Boats [*] :=
+ Premier  200
+Standard  150
+;
+
+NEOS Server Home

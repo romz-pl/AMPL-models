@@ -1,0 +1,89 @@
+*************************************************************
+
+   NEOS Server Version 6.0
+   Job#     : 16222657
+   Password : WiaMEbZJ
+   User     : 
+   Solver   : lp:Gurobi:AMPL
+   Start    : 2025-06-09 12:45:09
+   End      : 2025-06-09 12:45:10
+   Host     : prod-sub-1.neos-server.org
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information for any particular purpose.
+
+   Announcements:
+*************************************************************
+You are using the solver gurobi_ampl.
+Checking ampl.mod for gurobi_options...
+Checking ampl.com for gurobi_options...
+Executing AMPL.
+processing data.
+processing commands.
+Executing on prod-exec-7.neos-server.org
+
+Presolve eliminates 2 constraints.
+"option presolve 10;" used, but "option presolve 2;" would suffice.
+Adjusted problem:
+2 variables, all integer
+2 constraints, all linear; 4 nonzeros
+	2 inequality constraints
+1 linear objective; 2 nonzeros.
+
+Gurobi 12.0.1:   tech:threads = 4
+Set parameter LogToConsole to value 1
+  tech:outlev = 1
+
+AMPL MP initial flat model has 2 variables (2 integer, 0 binary);
+Objectives: 1 linear; 
+Constraints:  2 linear;
+
+AMPL MP final model has 2 variables (2 integer, 0 binary);
+Objectives: 1 linear; 
+Constraints:  2 linear;
+
+
+Set parameter InfUnbdInfo to value 1
+Gurobi Optimizer version 12.0.1 build v12.0.1rc0 (linux64 - "Rocky Linux 8.10 (Green Obsidian)")
+
+CPU model: Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 32 physical cores, 64 logical processors, using up to 4 threads
+
+Non-default parameters:
+InfUnbdInfo  1
+Threads  4
+
+Optimize a model with 2 rows, 2 columns and 4 nonzeros
+Model fingerprint: 0xcc044c11
+Variable types: 0 continuous, 2 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [6e+02, 8e+02]
+  Bounds range     [2e+02, 2e+02]
+  RHS range        [4e+02, 4e+02]
+Found heuristic solution: objective 250000.00000
+Presolve removed 2 rows and 2 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 64 available processors)
+
+Solution count 1: 250000 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.500000000000e+05, best bound 2.500000000000e+05, gap 0.0000%
+Gurobi 12.0.1: optimal solution; objective 250000
+0 simplex iterations
+Total_Revenue = 250000
+
+Boats [*] :=
+ Premier  200
+Standard  150
+;
+
+NEOS Server Home

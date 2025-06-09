@@ -1,0 +1,13 @@
+set BOAT_TYPES := Premier Standard;
+
+param revenue :=
+Premier 800
+Standard 600;
+
+param maintenance :=
+Premier 4
+Standard 3;
+
+param max_total_boats := 350;
+param max_premier_boats := 200;
+param max_maintenance := 1400;
